@@ -15,7 +15,7 @@ class zsh {
     require => Package['zsh'],
   }
 
-  osx_chsh { $::luser:
+  osx_chsh { $::boxen_user:
     shell   => "${boxen::config::homebrewdir}/bin/zsh",
     require => File_line['add zsh to /etc/shells'],
   }
